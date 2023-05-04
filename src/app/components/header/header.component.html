@@ -1,0 +1,32 @@
+<app-promotion-header *ngIf="promoActive"></app-promotion-header>
+<header class="header" [ngClass]="{'headerHome':headerHome}">
+    <div class="contenedor barra-navegacion">
+        <div class="logo point" (click)="navigateTo('/inicio')">
+            <img src="../../../assets/img/logo.svg" alt="logotipo" (click)="navigateTo('/inicio')">
+        </div>
+        <div class="burger-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="60" height="60"
+                viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+            </svg>
+        </div>
+        <nav class="menu-principal">
+            <ul class="menu">
+                <li *ngFor="let men of menu">
+                    <a [ngClass]="{'selected':men.active}" (click)="navigateTo(men.url)">{{men.name}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class=" tag-line  textcenter" *ngIf="headerHome">
+        <h1 style="line-height :5">Hola</h1>
+        <p class="textblanco">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore fuga itaque explicabo
+            sed. Ex sint
+            magnam nobis, maxime neque cumque accusantium odit quas. Ea magnam unde iure corporis amet repudiandae?
+        </p>
+    </div>
+</header>
